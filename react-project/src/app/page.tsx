@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FiTrash, FiEdit, FiCheck } from "react-icons/fi"
+<<<<<<< Updated upstream
 import { api } from "./api";
 
 interface TaskProps {
@@ -22,8 +23,25 @@ async function loadTasks() {
   const response = await api.get("/tasks")
   setTasks(response.data)
 }
+=======
+import { api } from "@/services/api";
+import { useEffect } from "react";
+>>>>>>> Stashed changes
 
 export default function Home() {
+
+  // Busca lista de tarefas no banco de dados via API
+  async function loadData() {
+    const response = await api.get("/todos")
+    console.log(response.data)
+  }
+
+  // Carrega quando a página inicia/é aberta
+  useEffect(() => {
+    loadData()
+  }, [])
+  
+  // Frontend da página
   return (
     <div className="w-full min-h-screen bg-slate-500 flex justify-center px-4">
       <main className="my-10 w-full lg:max-w-5xl">
