@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { FiTrash, FiEdit, FiCheck } from "react-icons/fi"
-<<<<<<< Updated upstream
 import { api } from "./api";
 
 interface TaskProps {
@@ -23,10 +22,6 @@ async function loadTasks() {
   const response = await api.get("/tasks")
   setTasks(response.data)
 }
-=======
-import { api } from "@/services/api";
-import { useEffect } from "react";
->>>>>>> Stashed changes
 
 export default function Home() {
 
