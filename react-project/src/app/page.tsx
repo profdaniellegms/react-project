@@ -43,11 +43,7 @@ export default function Home() {
   // Deleta uma tarefa
   async function deleteTask(id: string){
     try{
-      await api.delete("/tasks", {
-        params: {
-          id: id,
-        }
-      })
+      await api.delete("/tasks/" + id)
       const allTasks = tasks.filter((task) => task.id !== id)
       setTasks(allTasks)
     }
